@@ -2,7 +2,7 @@
 
 
 SQL> SELECT * 
-  2  FROM EMP;
+    FROM EMP;
 
      EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
 ---------- ---------- --------- ---------- --------- ---------- ---------- ----------
@@ -25,14 +25,14 @@ SO THIS IS MY SQL TABLE AM DOING SOME AGGREAGATE OPERATIONS ON IT.
 1.Apply aggregate functions on numeric columns
 
 SQL> SELECT  MAX(SAL),MIN(SAL),SUM(SAL)
-  2  FROM EMP;
+    FROM EMP;
   MAX(SAL)   MIN(SAL)   SUM(SAL)
 ---------- ---------- ----------
       5000        800      29025
       
   SQL> SELECT MAX(SAL),MIN(SAL),SUM(SAL)
-  2  FROM EMP
-  3  WHERE SAL>2000;
+    FROM EMP
+    WHERE SAL>2000;
   MAX(SAL)   MIN(SAL)   SUM(SAL)
 ---------- ---------- ----------
       5000       2450      19275 
@@ -41,9 +41,9 @@ SQL> SELECT  MAX(SAL),MIN(SAL),SUM(SAL)
 It Is a CLAUSE used to create the GROUP BY executing ROW BY ROW 
 
 SQL> SELECT MAX(SAL),MIN(SAL),DEPTNO
-  2  FROM EMP
-  3  WHERE SAL>500
-  4  GROUP BY DEPTNO;
+    FROM EMP
+    WHERE SAL>500
+    GROUP BY DEPTNO;
 
   MAX(SAL)   MIN(SAL)     DEPTNO
 ---------- ---------- ----------
@@ -53,9 +53,9 @@ SQL> SELECT MAX(SAL),MIN(SAL),DEPTNO
 
       
 SQL> SELECT  MAX(SAL),JOB,MIN(SAL)
-  2  FROM EMP
-  3  WHERE DEPTNO IN(10,20)
-  4  GROUP BY JOB;
+    FROM EMP
+    WHERE DEPTNO IN(10,20)
+    GROUP BY JOB;
 
   MAX(SAL) JOB         MIN(SAL)
 ---------- --------- ----------
@@ -68,9 +68,9 @@ SQL> SELECT  MAX(SAL),JOB,MIN(SAL)
 It Is a CLAUSE used to filter the conditions of groups 
 
 SQL> SELECT COUNT(*),DEPTNO
-  2  FROM EMP
-  3  GROUP BY DEPTNO 
-  4  HAVING COUNT(*)>3;
+    FROM EMP
+    GROUP BY DEPTNO 
+    HAVING COUNT(*)>3;
 
   COUNT(*)     DEPTNO
 ---------- ----------
@@ -79,10 +79,10 @@ SQL> SELECT COUNT(*),DEPTNO
 
 
 SQL> SELECT MAX(SAL),MIN(SAL),JOB
-  2  FROM EMP
-  3  WHERE SAL IS NOT NULL
-  4  GROUP BY JOB
-  5  HAVING MAX(SAL)>1000;
+    FROM EMP
+    WHERE SAL IS NOT NULL
+    GROUP BY JOB
+    HAVING MAX(SAL)>1000;
 
   MAX(SAL)   MIN(SAL) JOB
 ---------- ---------- ---------
