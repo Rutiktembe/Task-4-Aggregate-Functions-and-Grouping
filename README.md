@@ -91,3 +91,5 @@ SQL> SELECT MAX(SAL),MIN(SAL),JOB
       5000       5000 PRESIDENT
       2975       2450 MANAGER
       3000       3000 ANALYST
+
+Thankyou!!
